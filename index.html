@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intern/Employee Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Intern/Employee Portal</h1>
+    <nav>
+      <button onclick="showSection('registration')">Register</button>
+      <button onclick="showSection('attendance')">Attendance</button>
+      <button onclick="showSection('dashboard')">Dashboard</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Registration Form -->
+    <section id="registration" class="active">
+      <h2>Register Intern/Employee</h2>
+      <form id="registerForm">
+        <input type="text" placeholder="Name" id="name" required>
+        <input type="email" placeholder="Email" id="email" required>
+        <input type="text" placeholder="College" id="college">
+        <input type="text" placeholder="Role" id="role" required>
+        <input type="text" placeholder="Duration" id="duration">
+        <button type="submit">Register</button>
+      </form>
+      <p id="regMessage"></p>
+    </section>
+
+    <!-- Attendance Section -->
+    <section id="attendance">
+      <h2>Attendance</h2>
+      <button onclick="markAttendance('check-in')">Check In</button>
+      <button onclick="markAttendance('check-out')">Check Out</button>
+      <p id="attendanceMessage"></p>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard">
+      <h2>Dashboard</h2>
+      <div class="cards">
+        <div class="card">Total Interns: <span id="totalInterns">0</span></div>
+        <div class="card">Today Attendance: <span id="todayAttendance">0</span></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
